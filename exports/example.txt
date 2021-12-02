@@ -1,0 +1,1 @@
+When you export a deck from dashboard there will appear a CSV file with name "export<deck_id>" in this directory
