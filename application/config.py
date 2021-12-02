@@ -13,11 +13,11 @@ class LocalDevConfig(Config):
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(SQLITE_DB_DIR, 'testdb.sqlite3')
     DEBUG = True
 
-class ProductionConfig(Config):
-    user = 'flashcardApp'
-    password = 'flashtest@123'
-    host = 'localhost'
-    port = 5432
-    database = 'flashCardDB'
+class ProductionConfig(Config):     # replace any of below only if using separate DB server in a production env
+    user = 'YourUser'               # replace with your postgres of other DB user
+    password = 'YourPassword'       #replace with its password
+    host = 'localhost'              #replace with DB server IP                              
+    port = 5432                     #replace DB Server Port
+    database = 'YourDB'             #replace with database name
     SQLALCHEMY_DATABASE_URI = ('postgresql://{}:{}@{}:{}/{}'.format(user, password, host, port, database))
     DEBUG = False
