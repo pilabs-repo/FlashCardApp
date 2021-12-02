@@ -2,7 +2,8 @@ from flask import *
 from application.config import *
 from flask_restful import Resource
 from application.database import * 
-dev=True                        # true for development server
+dev=True                        # true for development server, development config from config.py
+                                # false for loading production config from config.py
 
 def create_app():
     app = Flask(__name__, template_folder='templates')
@@ -22,5 +23,5 @@ from application.apiEndpoints import *
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=8080, debug = 'True')
+    app.run(host='0.0.0.0',port=8080)
     #app.run(host='0.0.0.0',port=8080)
