@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Card</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='topButton' href="/dashboard" >Dashboard</a>
+        </div>
+        <h1>
+            Add Card
+        </h1>
+        <div>
+            <form action="/cards/add/{{did}}" method="post">
+                <label>Front</label>
+                <input type="text" name = 'front' required>
+                <label>Back</label>
+                <input type="text" name = 'back' required>
+                <input style="display: none;" type="text" name = 'deck_id' value="{{did}}">
+                <input style="background-color: lightgreen;" id = 'nextbutton' type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>

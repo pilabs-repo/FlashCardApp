@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Deck</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='topButton' href="/dashboard" >Dashboard</a>
+        </div>
+        <h1>
+            Edit Deck
+        </h1>
+        <div>
+            <form action="/decks/edit/{{di}}" method="post">
+                <label>Name</label>
+                <input type="text" value = "{{dn}}" name = 'deck_name' required>
+                <input style="background-color: lightgreen;" id = 'nextbutton' type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>

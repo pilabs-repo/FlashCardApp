@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Review Deck</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='topButton' href="/dashboard" >Dashboard</a>
+        </div>
+        <h1>
+            Card Review
+        </h1>
+        <div id = cardcontainer>
+        <div id = 'cardshow'> 
+            <h1 id = 'cardview' >{{card['front']}}</h1>
+            <h1 id = 'cardbackview' style="display: none;">{{card['back']}}</h1>
+        </div>
+        <div id = 'flipbuttondiv'>
+            <button id = 'flipbutton' onclick="flipcard()">Flip</button>
+        </div>
+        </div>
+        <div>
+            <form action="/decks/review/{{card['deck_id']}}" method="post">
+                <input type="text" style="display: none;" value="{{card['card_id']}}" name="card_id" >
+                <input type="radio" name = 'difficulty' value="easy" checked>
+                <label>Easy</label>
+                <input type="radio" name = 'difficulty' value="medium">
+                <label>Medium</label>
+                <input type="radio" name = 'difficulty' value="hard">
+                <label>Hard</label>
+                <input style="background-color: lightgreen;" id = 'nextbutton' type="submit" value="Next">
+            </form>
+        </div>
+    </body>
+</html>

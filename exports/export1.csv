@@ -1,0 +1,8 @@
+Deck ID,1
+User ID,1
+Deck Name,HTML
+Total Score,6
+Cards
+Card ID, Front, Back, Card Score
+1,<p>,para,1
+2,<a>,anchor,5

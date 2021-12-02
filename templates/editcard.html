@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Card</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='topButton' href="/dashboard" >Dashboard</a>
+        </div>
+        <h1>
+            Card Review
+        </h1>
+        <div>
+            <form action="/cards/edit/{{cid}}" method="post">
+                <label>Front</label>
+                <input type="text" value="{{f}}" name = 'front'  required>
+                <label>Back</label>
+                <input type="text" value="{{b}}" name = 'back' required >
+                <input style="background-color: lightgreen;" id = 'nextbutton' type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>

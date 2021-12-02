@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='homeButton' href="/" >Home</a>
+            <a id ='topButton' href="/signup">Signup</a>
+            <a id ='currentButton' href="/login" >Login</a>
+        </div>
+        <div>
+        <h1>
+            Login
+        </h1>
+        <div id = 'statuses' >
+            <table id ='statustable'>
+                {%for item in statuses%}
+                <tr id = 'status{{loop.index}}'>
+                <td id = 'statusrow'><p id=status>{{item}}</p></td>
+                <td id = 'statusrow'><button id = 'statusclosebutton' onclick = "document.getElementById('status{{loop.index}}').style.display='None'" >X</button></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        <form action ='/login' method="POST" id = 'login-form'>
+            <label>Username</label>
+            <input type="text" name="username" required /><br>
+            <label>Password</label>
+            <input id = 'pwd' type="password" name="password" required /><br>
+            <input type="checkbox" onclick="showpwd()">Show Password
+            <input id = 'submitbutton' type="submit" value = "Submit">
+        </form>
+    </div>
+    </body>
+</html>

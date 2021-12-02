@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Deck</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='topButton' href="/dashboard" >Dashboard</a>
+        </div>
+        <h1>
+            Add Deck
+        </h1>
+        <div>
+            <form action="/decks/add" method="post">
+                <label>Name</label>
+                <input type="text" name = 'deck_name' required>
+                <input style="background-color: lightgreen;" id = 'nextbutton' type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>

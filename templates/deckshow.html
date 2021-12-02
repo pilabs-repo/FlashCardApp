@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Deck View</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src = "/static/custom_validation.js"></script>
+    </head>
+    <body>
+        <div id ='topBar'>
+            <a id ='topButton' href="/dashboard" >Dashboard</a>
+        </div>
+        <h1>
+            Deck View
+        </h1>
+        <h2>Deck name   : {{value['deck_name']}}</h2>
+        <h2>Total Score : {{value['total_score']}}</h2>
+        <table id = 'decktable'>
+            <tr><th>Sno</th><th>Front</th><th>Back</th><th>Score</th><th>Edit</th>
+                <th>Delete</th></tr>
+            {%for i in value['cards']%}
+            <tr>
+                <td>{{loop.index}}</td><td>{{i['front']}}</td><td>{{i['back']}}</td><td>{{i['card_score']}}</td>
+                <td><a href="/cards/edit/{{i['card_id']}}">E</a></td><td><a href="/cards/delete/{{i['card_id']}}">D</a></td>
+            </tr>
+            {%endfor%}
+
+        </table>
+        <div>
+            <a id='addcardbutton' href="/cards/add/{{value['deck_id']}}">Add Card</a>
+        </div>
+        <div>
+            <a id='editdeckbutton' href="/decks/edit/{{value['deck_id']}}">Edit Deck</a>
+        </div>
+    </body>
+</html>
